@@ -36,7 +36,7 @@ router.get("/:blog_id",(req,res)=>{
 
 router.post('/',(req,res)=>{
     con.query(
-        `insert into blogs(blog_id,blog_name,blog_description,blog_body,blog_link)values('${req.body.blog_id}','${req.body.blog_name}','${req.body.blog_description}','${req.body.blog_body}','${req.body.blog_link}')`,
+        `insert into blogs(blog_id,blog_name,blog_description,blog_body,blog_link)values('${req.body.blog_id}','${req.body.blog_name}',"${req.body.blog_description}","${req.body.blog_body}","${req.body.blog_link}")`,
         (err,results)=>{
             if(err) throw err;
             res.status(201).send()
